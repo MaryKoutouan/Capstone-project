@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+	<nav>
+		<ol>
+	        <li class="crumb"><a href="./home.html">Home</a></li>
+	        <li class="crumb"><a href="./bootcampList.html">List of all Women IT Bootcamp</a></li>
+			<li class="crumb"><a href="./rating.html">Bootcamp rating</a></li>
+			<li class="crumb"><a href="./about.html">About us</a></li>
+			<li class="crumb"><a href="./more.html">More</a></li>
+	    </ol>
+	</nav>
+
+	<content>
+			<header>
+				<h1>Women Bootcamp List</h1>
+			</header>
+		
+			<form>
+		
+			<input 
+			  type="text" 
+			  id="addboot" 
+			  placeholder="Women bootcamp name" 
+			
+			/>
+	  
+			<input 
+			  type="text" 
+			  id="information" 
+			  placeholder="Overall information about it"
+			  
+			/>
+			<input 
+			  type="url" 
+			  id="pagelink" 
+			  placeholder="Paste a link page"
+			  
+			/>
+			
+			<section id="bootcamp-container"></section>
+
+			<section id="ratings-container">
+				<p>Rate the bootcamp:</p>
+				<div id="radio-container">
+					<label for="one">
+						<input
+							type="radio"
+							name="ratings"
+							value="1"
+							id="one"/>
+						1
+					</label>
+					<label for="two">
+						<input
+							type="radio"
+							name="ratings"
+							value="2"
+							id="two"/>
+						2
+					</label>
+					<label for="three">
+						<input
+							type="radio"
+							name="ratings"
+							value="3"
+							id="three"/>
+						3
+					</label>
+					<label for="four">
+						<input
+							type="radio"
+							name="ratings"
+							value="4"
+							id="four"/>
+						4
+					</label>
+					<label for="five">
+						<input
+							type="radio"
+							name="ratings"
+							value="5"
+							id="five"/>
+						5
+					</label>
+				</div>
+			</section>
+
+		<button id="getNewBootcampButton">Add new bootcamp</button>
+			
+		  </form>
+
+		  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="server.js"></script>
+		<script src="controller.js"></script>
+
+
+	</body>
+	</html>
+		  <!-- <button id="allIdeasButton">Get all ideas</button>
+		  <div id="ideascontainers"></div> -->
