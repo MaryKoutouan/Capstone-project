@@ -2,8 +2,6 @@ const bootcampCont = document.querySelector("#bootcamp-list")
 
 const form = document.querySelector('form');
 
-const newBootcampBtn = document.getElementById("getNewBootcampButton");
-
 const errCallback = err => console.log(err.response.data)
 
 const getAllBootcamp = () => {
@@ -17,6 +15,8 @@ const getAllBootcamp = () => {
                     <h4> <a href="${elem.link}">${elem.link}</a></h4>
                     <h4>Rating: ${elem.rating}/5</h4>
                     <p>Description: ${elem.description}</p>
+                    <button onclick="deleteBootcamp(${elem['bootcamp_id']})">Delete</button>
+                    <button onclick="putBootcamp: ">Edit</button>
                     </div>
                 `
 
@@ -26,49 +26,38 @@ const getAllBootcamp = () => {
         }).catch(errCallback)
 };
 
-
-// newBootcampBtn.addEventListener('click', getAllBootcamp)
-
 form.addEventListener('submit', submitHandler)
+
 function submitHandler(e) {
     e.preventDefault()
 
-    let information = document.querySelector('#information')
-    let rating = document.querySelector('input[name="ratings"]:checked')
-    let pageLink = document.querySelector('#pagelink')
-    let userAddBoot = document.getElementById('addboot')
-
-    let bodyObj = {
-        information: information.value,
-        rating: rating.value, 
-        pageLink: pageLink.value,
-        userAddBoot: userAddBoot.value
+    let description = document.querySelector('#info-input')
+    let rating = document.querySelector('input[name="rating"]:checked').value
+    let link = document.querySelector('#link-input')
+    let title = document.querySelector('#title-input')
+    let body = {
+        description: description.value, 
+        link: link.value,
+        title: title.value,
+        rating: +rating
     }
 
-    postBootcamp(bodyObj)
-
-    information.value = ''
-    rating.checked = false
-    pageLink.value = ''
-}
-
-
-
-const postBootcamp = (body) => {
     axios.post("http://localhost:5500/api/bootcamp/", body)
-        .then(res => {
-            const data = res.data;
-            alert(data);
-        });
+        .then(() => {
+            description.value = ''
+            title.value = ''
+            link.value = ''
+            document.querySelector('#rating-one').checked = true
+            getAllBootcamp()
+        })
 };
 
-
 const putBootcamp = (body) => {
+    bootcampCont.innerHTML = ``
     axios.put("http://localhost:5500/api/bootcamp/", body)
     .then(res => {
-        bootcampCont.innerHTML = ``
         for (let i = 0; i < res.data.length; i++) {
-            bootCard(res.data[i])
+            bootcampCont.innerHTML = res.data[i]
         }
         
     }).catch(errCallback)
@@ -76,14 +65,17 @@ const putBootcamp = (body) => {
 
 
 const deleteBootcamp = (body) => {
-    axios.delete("http://localhost:5500/api/bootcamp/", body).then(res => {
+
+    axios.delete("http://localhost:5500/api/bootcamp/", body)
+        .then(() => getAllBootcamp())
+        .catch(err => console.log(err))
+    // (res => {
         
-        bootcampCont.innerHTML = ``
-        for (let i = 0; i < res.data.length; i++) {
-            bootCard(res.data[i])
-        }
+    //     // for (let i = 0; i < res.data.length; i++) {
+    //     //     bootCard(res.data[i])
+    //     // }
        
-    }).catch(errCallback)
+    // }).catch(errCallback)
 };
 
 getAllBootcamp()
