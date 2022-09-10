@@ -1,0 +1,22 @@
+/* .radio {
+    display: flex;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+/* .boot-card {
+    height: 350px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: left;
+    margin: 25
+} */

@@ -5,10 +5,11 @@
     <title>Boot camp list</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sticky-menu.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<!-- <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
+    <body>
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -39,14 +40,51 @@
         </div>		<!-- .container -->
     </nav>
     
-    <section id="whatwedo" class="whatwedo-section">
+    <section id="" class="">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>What We Do</h1>
-                </div>
+                    <h1>All bootcamp</h1>
             </div>
         </div>
+        <h2>Add a Bootcamp</h2>
+
+        <form>
+            <label for="title-input">Bootcamp Name:</label>
+            <input type='text' id="title-input"/>
+
+            <label for="info-input">Description:</label>
+            <input type='text' id="info-input"></input>
+
+            <h4>Rating</h4>
+            <div class="radio">
+                <label for="rating-one">1:</label>
+                <input type="radio" name="rating" value="1" id="rating-one" checked="true"/>
+            </div>
+
+            <div class="radio">
+                <label for="rating-two">2:</label>
+                <input type="radio" name="rating" value="2" id="rating-two"/>
+            </div>
+
+            <div class="radio">
+                <label for="rating-three">3:</label>
+                <input type="radio" name="rating" value="3" id="rating-three"/>
+            </div>
+
+            <div class="radio">
+                <label for="rating-four">4:</label>
+                <input type="radio" name="rating" value="4" id="rating-four"/>
+            </div>
+
+            <div class="radio">
+                <label for="rating-five">5:</label>
+                <input type="radio" name="rating" value="5" id="rating-five"/>
+            </div>
+            
+            <button>Add</button>
+        </form>
+
+        <section id="bootcamp-list"></section>
     </section>
 
 

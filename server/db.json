@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "title": "Hackbright Academy",
+      "rating": 5,
+      "link" : "https://hackbrightacademy.com/",
+      "description": "Hackbright Academy is one of the few software development institutes in the US focused exclusively on training women for tech roles.Hackbright Academy is a software engineering institute for women. The coding school was founded in 2012 and has trained over 900 women to enter tech careers. The school bootcamp offers both in-person and online classes. Its courses are ideal for any woman who wants to learn essential tech skills. To accommodate the busy lives of students, the institute offers full-time and part-time courses."
+    },
+    {
+      "id": 2,
+      "title": "The Grace Hopper Program at Fullstack Academy",
+      "rating": 4,
+      "link" : "https://www.gracehopper.com/",
+      "description": "The Grace Hopper Program is made for women who aspire to become software engineers and work in the tech industry. This initiative aims to empower women and non-binary individuals who want to excel in technology. Its program is held via Fullstack Academy, and it is only offered to women, non-binary, and trans individuals. Courses at the Grace Hopper Program are available for now via online remote classes. The software engineering immersive can only be taken full-time."
+    },
+    {
+      "id": 3,
+      "title": "Ada Developers Academy",
+      "rating": 4,
+      "link" : "https://adadevelopersacademy.org/",
+      "description": "Ada Developers Academy is a free software engineering bootcamp for women and gender-expansive adults. There are no hidden charges, but only the most ambitious students are admitted into the program. It is a non-profit organization that provides full stack software engineering training for women in tech. The school was named after a 19th-century mathematician, Augusta Ada Lovelace. Ada Developers Academy only offers one type of schedule: full-time."
+    },
+    {
+      "id": 4,
+      "title": "GirlCode",
+      "rating": 2,
+      "link" : "https://girlcode.co.za/",
+      "description": "GirlCode is a three-month online coding bootcamp that seeks to help women secure careers in tech. This online learning platform aims to help all women, regardless of their experience level. To better support its students, GirlCode provides dedicated mentoring and career coaching throughout its programs."
+    },
+    {
+      "id": 5,
+      "title": "Black Codher",
+      "rating": 3,
+      "link" : "https://blackcodher.com/",
+      "description": "Black Codher provides training in coding basics, front end coding, full stack development, and databases to African American women. This high-quality education program runs for 30 weeks, and the objective is to help Black women upskill for tech careers. Due to COVID-19, all women will learn the curriculum remotely. "
+    },
+    {
+      "id": 6,
+      "title": "CodeOp ",
+      "rating": 1,
+      "link" : "https://codeop.tech/",
+      "description": "Helping women build their tech careers, this online learning platform also has in-person classes in Barcelona and Malaysia. If you are a woman who wants to become a data analyst, a full stack developer, or a product manager, you are in luck. CodeOp offers full-time and part-time study options, and it aims to provide an inclusive learning experience for all women."
+    },
+    {
+      "id": 7,
+      "title": "MotherCoders",
+      "rating": 3,
+      "link" : "http://www.mothercoders.org/",
+      "description": "If you are a woman with children and want to join a supportive coding environment for women, this is the option for you. MotherCoders helps women gain all the coding skills they need, while also exposing women to networking opportunities. The coding classes for women occur in person, and any mom who wants to code can apply."
+    }
+    
+  ]
