@@ -12,11 +12,13 @@ const getAllBootcamp = () => {
             res.data.forEach(elem => {
                 let bootCard = `<div class="boot-card">
                     <h2>${elem.title}</h2>
-                    <h4> <a href="${elem.link}">${elem.link}</a></h4>
-                    <h4>Rating: ${elem.rating}/5</h4>
+                    <h4> <a href="${elem.link}" target="_blank">${elem.link}</a></h4>
+                    
+                    <h4><button onclick="putBootcamp({id: ${elem.id}, type:'minus'})">-</button> Rating: ${elem.rating}/5 
+                    <button onclick="putBootcamp({id: ${elem.id}, type:'plus'})">+</button></h4> 
                     <p>Description: ${elem.description}</p>
                     <button onclick="deleteBootcamp(${elem['bootcamp_id']})">Delete</button>
-                    <button onclick="putBootcamp: ">Edit</button>
+                
                     </div>
                 `
 
@@ -52,17 +54,20 @@ function submitHandler(e) {
         })
 };
 
-const putBootcamp = (body) => {
-    bootcampCont.innerHTML = ``
-    axios.put("http://localhost:5500/api/bootcamp/", body)
-    .then(res => {
-        for (let i = 0; i < res.data.length; i++) {
-            bootcampCont.innerHTML = res.data[i]
-        }
+// const putBootcamp = (body) => {
+//     bootcampCont.innerHTML = ``
+//     axios.put("http://localhost:5500/api/bootcamp/", body)
+//     .then(res => {
+//         for (let i = 0; i < res.data.length; i++) {
+//             bootcampCont.innerHTML = res.data[i]
+//         }
         
-    }).catch(errCallback)
-};
-
+//     }).catch(errCallback)
+const putBootcamp = (body) => {
+    axios.put("http://localhost:5500/api/bootcamp/", body)
+    .then(getAllBootcamp())
+    .catch(err => console.log(err))
+}
 
 const deleteBootcamp = (body) => {
 

@@ -21,19 +21,24 @@ module.exports = {
 
     },
     putBootcamp: (req, res) => {
-        let { title, rating, link, description, id } = (req.body)
-        
+        let { id, type } = req.body
+        console.log(id, type)
         let index = bootcamp.findIndex(elem => +elem.id === +id)
 
-        if (bootcamp[index]) {
-            bootcamp[index].link = link
-            bootcamp[index].description = description
-            bootcamp[index].title = title
-            bootcamp[index].rating = rating
+        if (bootcamp[index].rating === 5 && type === 'plus') {
+            res.status(400).send('cannot go above 5')
+        } else if (bootcamp[index].rating === 0 && type === 'minus') {
+            res.status(400).send('cannot go below 0')
+        } else if (type === 'plus') {
+            bootcamp[index].rating++
+            res.status(200).send(bootcamp)
+        } else if (type === 'minus') {
+            bootcamp[index].rating--
+            res.status(200).send(bootcamp)
+        } else {
+            res.sendStatus(400)
         }
-
-        res.status(200).send(bootcamp)
-    },
+},
     deleteBootcamp: (req, res) => {
         const id = Number(req.params.id);
         const index = bootcamp.findIndex(elem => elem.id === id);
@@ -41,4 +46,6 @@ module.exports = {
         res.status(200).send(bootcamp);
     }
 }
+
+
 

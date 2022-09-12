@@ -1,22 +1,25 @@
-/* .radio {
-    display: flex;
-} */
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 500px;
-    width: 200px;
-    margin-top: 20px;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto
 }
 
-/* .boot-card {
-    height: 350px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    float: left;
-    margin: 25
-} */
+
+#addboot {
+    text-align: left
+}
+
+.container {
+    background-color: white
+}
+.boot-card {
+    border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 5px 
+}

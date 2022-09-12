@@ -40,25 +40,31 @@
         </div>		<!-- .container -->
     </nav>
     
-    <section id="" class="">
+    <section id="allbootcamp" class="allbootcamp">
         <div class="container">
             <div class="row">
-                    <h1>All bootcamp</h1>
+                    <h1>List Bootcamps</h1>
+                    <h3>To add a new Bootcamp <a href="#addboot"> CLICK HERE!</a></h3>
             </div>
-        </div>
-        <h2>Add a Bootcamp</h2>
+        
+        <section id="bootcamp-list"></section>
+
+        <h2 id="addboot">Add a Bootcamp</h2>
 
         <form>
             <label for="title-input">Bootcamp Name:</label>
             <input type='text' id="title-input"/>
 
-            <label for="info-input">Description:</label>
-            <input type='text' id="info-input"></input>
+            
 
             <label for="link-input">Link:</label>
             <input type='url' id="link-input"></input>
 
+            <label for="info-input">Description:</label>
+            <textarea name="message" id="info-input" rows="10" cols="30">Enter your description here!</textarea>
+
             <h4>Rating</h4>
+            <div>
             <div class="radio">
                 <label for="rating-one">1:</label>
                 <input type="radio" name="rating" value="1" id="rating-one" checked="true"/>
@@ -83,11 +89,13 @@
                 <label for="rating-five">5:</label>
                 <input type="radio" name="rating" value="5" id="rating-five"/>
             </div>
+        </div>
             
             <button>Add</button>
         </form>
 
-        <section id="bootcamp-list"></section>
+
+   </div> 
     </section>
 
 
