@@ -1,11 +1,12 @@
 const bootcampCont = document.querySelector("#bootcamp-list")
 
+
 const form = document.querySelector('form');
 
 const errCallback = err => console.log(err.response.data)
 
 const getAllBootcamp = () => {
-    bootcampCont.innerHTML = ``
+    bootcampCont.innerHTML = ''
     axios.get("http://localhost:5500/api/allBootcamp")
         .then(res => {
             console.log(res.data)
@@ -32,6 +33,7 @@ form.addEventListener('submit', submitHandler)
 
 function submitHandler(e) {
     e.preventDefault()
+    alert("Bootcamp successfully added!");
 
     let description = document.querySelector('#info-input')
     let rating = document.querySelector('input[name="rating"]:checked').value
@@ -54,15 +56,6 @@ function submitHandler(e) {
         })
 };
 
-// const putBootcamp = (body) => {
-//     bootcampCont.innerHTML = ``
-//     axios.put("http://localhost:5500/api/bootcamp/", body)
-//     .then(res => {
-//         for (let i = 0; i < res.data.length; i++) {
-//             bootcampCont.innerHTML = res.data[i]
-//         }
-        
-//     }).catch(errCallback)
 const putBootcamp = (body) => {
     axios.put("http://localhost:5500/api/bootcamp/", body)
     .then(getAllBootcamp())
@@ -74,14 +67,9 @@ const deleteBootcamp = (body) => {
     axios.delete("http://localhost:5500/api/bootcamp/", body)
         .then(() => getAllBootcamp())
         .catch(err => console.log(err))
-    // (res => {
-        
-    //     // for (let i = 0; i < res.data.length; i++) {
-    //     //     bootCard(res.data[i])
-    //     // }
-       
-    // }).catch(errCallback)
 };
+
+
 
 getAllBootcamp()
 

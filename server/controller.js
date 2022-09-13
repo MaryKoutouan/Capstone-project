@@ -1,5 +1,6 @@
 const bootcamp = require('./db.json');
-let globalID = 8;
+let globalID = 7;
+let reviews = []
 module.exports = {
 
     getAllBootcamp: (req, res) => {
@@ -12,17 +13,16 @@ module.exports = {
             rating,
             link,
             description,
-            id: globalID
+            id: globalID,
+            reviews: reviews
         }
         bootcamp.push(newBoot)
         res.status(200).send("New Bootcamp Successfully Added!")
         globalID++
-
-
+        reviews = []
     },
     putBootcamp: (req, res) => {
         let { id, type } = req.body
-        console.log(id, type)
         let index = bootcamp.findIndex(elem => +elem.id === +id)
 
         if (bootcamp[index].rating === 5 && type === 'plus') {
@@ -38,12 +38,34 @@ module.exports = {
         } else {
             res.sendStatus(400)
         }
-},
+    },
     deleteBootcamp: (req, res) => {
         const id = Number(req.params.id);
         const index = bootcamp.findIndex(elem => elem.id === id);
         bootcamp.splice(index, 1);
         res.status(200).send(bootcamp);
+    },
+    getReview: (req,res) => {
+        let review = [];
+        for (let i = 0; i < bootcamp.length; i++) {
+            review.push({"id":bootcamp[i].id, "title":bootcamp[i].title, "reviews":bootcamp[i].reviews})
+        }
+        res.status(200).send(review)
+    },
+    putReview: (req, res) => {
+        let { title, aboutUser, revBox } = req.body
+        console.log(title, aboutUser, revBox)
+        let index = bootcamp.findIndex(elem => elem.title === title)
+        console.log(index, bootcamp[index].reviews)
+
+        if(bootcamp[index].reviews) {
+            bootcamp[index].reviews.push({
+                "user": aboutUser,
+                "message": revBox
+            })
+        }
+        res.status(200).send(bootcamp)
+
     }
 }
 

@@ -54,7 +54,7 @@ html {
     text-align: center;
     background: #EFDECD;
 }
-.allbootcamp {
+.allbootcamp, .review {
     padding-top: 150px;
     text-align: center;
     background: #EFDECD;
@@ -83,5 +83,9 @@ html {
     color: #000;
 }
 
-
+.review {
+    padding-top: 150px;
+    text-align: left;
+    border: solid gray
+}
 

@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>Home page</title>
+    <title>Contact us</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sticky-menu.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -38,23 +38,43 @@
                         <a href="./contact.html">Contact</a>
                     </li>
                 </ul>
-            </div>	<!-- .navbar-collapse -->
-        </div>		<!-- .container -->
+            </div>	
+        </div>		
     </nav>
-    <!-- Welcome   -->
-    <section id="welcome" class="welcome-section">
+
+    <!-- Review Section -->
+    
+    <section id="review" class="review">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Interactive Women IT Bootcamp</h1>
-                    <div id="map"></div>
-                </div>
-            </div>
+        <div>
+        <h3>Reviews Guidelines</h3>
+            <p>- Post clear, valuable, and honest information that will be useful and informative to future coding bootcampers. Think about what your bootcamp excelled at and what might have been better.</p>
+            <p>- Be nice to others; don't attack others or call anyone out by name.</p>
+            <p>- Use good grammar and check your spelling.</p>
+            
+        </div>
+        <section id="reviews-list"></section>
+        <h3>Submit review</h3>
+        <form id="form">
+            <label for="about-box">About You</label>
+            <input type="text" placeholder="Name" id="about-box"></input>
+
+            <label for="review-title">Title</label>
+            <select name="bootcamp-name" id="bootcamp-name">
+            </select>
+             
+        
+            <label for="review-box">Review Content</label>
+            <textarea name="message" id="review-box" placeholder="Enter your review here!"></textarea>
+            <input type="submit" value="Submit" />
+        </form>
         </div>
     </section>
 
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
+
+    <script src="review.js"></script>
     <script type="text/javascript" src="./mapdata.js"></script>		
     <script  type="text/javascript" src="./usmap.js"></script>
 
