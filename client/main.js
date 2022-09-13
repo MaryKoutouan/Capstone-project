@@ -33,7 +33,6 @@ form.addEventListener('submit', submitHandler)
 
 function submitHandler(e) {
     e.preventDefault()
-    alert("Bootcamp successfully added!");
 
     let description = document.querySelector('#info-input')
     let rating = document.querySelector('input[name="rating"]:checked').value
@@ -45,6 +44,7 @@ function submitHandler(e) {
         title: title.value,
         rating: +rating
     }
+    if (title.value) {
 
     axios.post("http://localhost:5500/api/bootcamp/", body)
         .then(() => {
@@ -52,8 +52,10 @@ function submitHandler(e) {
             title.value = ''
             link.value = ''
             document.querySelector('#rating-one').checked = true
+            alert("Bootcamp successfully added!");
             getAllBootcamp()
         })
+    }
 };
 
 const putBootcamp = (body) => {

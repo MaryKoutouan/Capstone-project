@@ -3,7 +3,6 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 320px;
     width: 400px;
     margin-right: auto;
     margin-left: auto;

@@ -53,10 +53,8 @@ module.exports = {
         res.status(200).send(review)
     },
     putReview: (req, res) => {
-        let { title, aboutUser, revBox } = req.body
-        console.log(title, aboutUser, revBox)
-        let index = bootcamp.findIndex(elem => elem.title === title)
-        console.log(index, bootcamp[index].reviews)
+        let { id, aboutUser, revBox } = req.body
+        let index = bootcamp.findIndex(elem => +elem.id === +id)
 
         if(bootcamp[index].reviews) {
             bootcamp[index].reviews.push({

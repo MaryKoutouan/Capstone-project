@@ -10,7 +10,7 @@ const getReviewTitle = () => {
             console.log(res.data)
             res.data.forEach(elem => {
                 let bootCard = `
-                <option value=${elem.title}>${elem.title}</option>
+                <option value=${elem.id}>${elem.title}</option>
                 `
                 let reviewCard = `<div class="review-card">
                 <h3>${elem.title}</h3>
@@ -33,18 +33,17 @@ const getReviewTitle = () => {
 const putReview = () => {
 
     let aboutUser = document.querySelector('#about-box')
-    let title = document.querySelector('#bootcamp-name')
+    let id = document.querySelector('#bootcamp-name')
     let revBox = document.querySelector('#review-box')
     let body = {
         aboutUser: aboutUser.value,
-        title: title.value,
+        id: id.value,
         revBox: revBox.value
     }
 
     axios.put("http://localhost:5500/api/review/", body)
         .then(() => {
             aboutUser.value = ''
-            title.value = ''
             revBox.value = ''
             getReviewTitle()
         })
