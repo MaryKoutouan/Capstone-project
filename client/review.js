@@ -17,8 +17,10 @@ const getReviewTitle = () => {
                 
                 ${elem.reviews.map(function (review) { 
                     return (
-                        `<h4>User: ${review.user} </h4>
-                        <p>Message: ${review.message}</p>
+                        `<div class="reviewbox">
+                        <h5 style="color: blue">User: ${review.user} </h5>
+                        <h4>Message: ${review.message}</h4>
+                        </div>
                     `)
                 })}
                 </div>
