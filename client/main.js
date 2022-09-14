@@ -18,7 +18,7 @@ const getAllBootcamp = () => {
                     <h4><button onclick="putBootcamp({id: ${elem.id}, type:'minus'})">-</button> Rating: ${elem.rating}/5 
                     <button onclick="putBootcamp({id: ${elem.id}, type:'plus'})">+</button></h4> 
                     <p>Description: ${elem.description}</p>
-                    <button onclick="deleteBootcamp(${elem['bootcamp_id']})">Delete</button>
+                    <button onclick="deleteBootcamp(${elem.id})">Delete</button>
                 
                     </div>
                 `
@@ -64,9 +64,9 @@ const putBootcamp = (body) => {
     .catch(err => console.log(err))
 }
 
-const deleteBootcamp = (body) => {
+const deleteBootcamp = (id) => {
 
-    axios.delete("http://localhost:5500/api/bootcamp/", body)
+axios.delete(`http://localhost:5500/api/bootcamp/${id}`)
         .then(() => getAllBootcamp())
         .catch(err => console.log(err))
 };

@@ -41,7 +41,8 @@ module.exports = {
     },
     deleteBootcamp: (req, res) => {
         const id = Number(req.params.id);
-        const index = bootcamp.findIndex(elem => elem.id === id);
+        const index = bootcamp.findIndex(elem => +elem.id === +id);
+        
         bootcamp.splice(index, 1);
         res.status(200).send(bootcamp);
     },
